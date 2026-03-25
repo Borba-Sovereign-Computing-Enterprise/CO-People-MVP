@@ -196,6 +196,21 @@ A busca conecta o paciente ao profissional ideal com base em:
 - Regras de negócio bem definidas
 
 
+
+
+
+
+---
+
+**Módulo anterior:**  
+[M1 — Autenticação e Cadastro](../m1-autenticacao-cadastro/README.md)
+
+**Próximo módulo:**  
+[M3 — Busca e Categorias](../m3-busca-categorias/README.md)
+
+---
+
+
 - 📦 **Produto & Negócio — Busca e Categorias**  
   👉 [Ver documentação](./produto-negocio-busca-categorias.md)
 
