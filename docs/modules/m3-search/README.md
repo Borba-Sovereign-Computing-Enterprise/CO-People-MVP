@@ -195,10 +195,10 @@ A busca conecta o paciente ao profissional ideal com base em:
 - Dados confiáveis
 - Regras de negócio bem definidas
 
-- - 📦 **Produto & Negócio — Busca e Categorias**  
-  Documenta a jornada do paciente, filtros, categorias e regras de negócio.
+
+- 📦 **Produto & Negócio — Busca e Categorias**  
+  👉 [Ver documentação](./produto-negocio-busca-categorias.md)
 
 - ⚙️ **Especificação Técnica — Busca e Categorias**  
-  Contém detalhes de implementação: busca, geolocalização, algoritmo de relevância e endpoints.
+  👉 [Ver documentação](./especificacao-tecnica-busca-categorias.md)
 
----
