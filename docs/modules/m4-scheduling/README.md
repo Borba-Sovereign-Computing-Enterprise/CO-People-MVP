@@ -350,3 +350,13 @@ Devem ser definidos limites para evitar sobrecarga ou abusos do sistema:
 - **Estado antes e depois** — agendamento original e para o quê foi alterado (data, horário, modalidade)
 - **Motivo informado** — campo opcional para o usuário, mas deve sempre existir no sistema
 - **Resultado financeiro** — se houve reembolso, valor, taxa cobrada e canal de pagamento afetado
+
+
+
+---
+
+- 📦 [Produto & Negócio — Agendamento](./produto-negocio.md)
+
+- ⚙️ [Especificação Técnica — Agendamento](./especificacao-tecnica.md)
+
+---
