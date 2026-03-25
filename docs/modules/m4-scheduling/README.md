@@ -172,4 +172,181 @@ Cada consulta percorre um ciclo de vida com 8 estados possíveis:
 | RN-AGE-029 | Reagendamento só é permitido dentro da janela configurada pelo profissional |
 | RN-AGE-030 | O novo horário proposto deve passar por conflict detection antes de ser confirmado |
 | RN-AGE-031 | Ambos devem ser notificados ao confirmar um reagendamento |
-| RN-AGE-
+| RN-AGE-Reagendamento iniciado pelo profissional não gera cobrança — o paciente pode aceitar ou cancelar com reembolso integral|
+
+### 5.6 Histórico de Alterações
+Todo evento no ciclo de vida de um agendamento deve ser registrado com os seguintes dados:
+
+| Campo | Descrição |
+| --- | --- |
+| **Ator** | Quem fez a ação — paciente, profissional ou sistema automático |
+| **Ação** | O que foi feito — cancelamento, reagendamento, confirmação, expiração |
+| **Timestamp** | Data e hora exata — determina se estava dentro ou fora do prazo |
+| **Estado anterior** | Estado do agendamento antes da ação |
+| **Estado posterior** | Estado do agendamento após a ação |
+| **Motivo** | Campo opcional para o usuário, obrigatório para ações do sistema |
+| **Resultado financeiro** | Se houve reembolso, valor, taxa cobrada e canal de pagamento afetado |
+
+### Regras de negócio — Histórico
+
+| Regra | Descrição |
+| --- | --- |
+| RN-AGE-033 | O histórico de alterações é imutável — nenhum usuário ou admin pode editá-lo |
+| RN-AGE-034 | Paciente e profissional têm acesso ao histórico de seus próprios agendamentos |
+| RN-AGE-035 | O time interno acessa o histórico completo via M9, com registro de auditoria do acesso |
+| RN-AGE-036 | Histórico deve ser retido por no mínimo 5 anos (conformidade com CFM e LGPD) |
+
+---
+
+## 🚨 Casos Especiais e Edge Cases
+
+| Situação | Comportamento esperado |
+| --- | --- |
+| Dois pacientes tentam reservar o mesmo slot ao mesmo tempo | Conflict detection: apenas o primeiro que concluir o pagamento confirma — o segundo recebe mensagem de slot indisponível |
+| Paciente não conclui o pagamento no prazo de bloqueio | Slot liberado automaticamente após 10 minutos; paciente recebe notificação de expiração |
+| Profissional cancela com menos de 1h de antecedência | Reembolso integral + notificação com prioridade máxima (push + SMS) + registro para monitoramento interno |
+| Paciente tenta agendar fora da janela de antecedência mínima | Slot não aparece como disponível — sem mensagem de erro, apenas omissão do slot |
+| Consulta domiciliar com endereço não informado | Sistema bloqueia a confirmação e solicita o endereço antes de prosseguir |
+| Profissional altera a antecedência mínima após agendamentos confirmados | A nova regra se aplica apenas a agendamentos futuros — os já confirmados mantêm a regra original |
+| Paciente menor de 18 anos agenda sem responsável | Sistema deve exigir vinculação com responsável cadastrado antes de permitir o agendamento |
+| Falha no pagamento durante o bloqueio do slot | Slot permanece bloqueado enquanto o pagamento está sendo reprocessado — libera após esgotamento das tentativas |
+
+---
+
+## 📊 Status do Módulo
+
+| Item | Status |
+| --- | --- |
+| Especificação de regras de negócio (hub) | 🟡 Em andamento |
+| Sub-página Produto & Negócio | ⚪ Não iniciado |
+| Sub-página Especificação Técnica | ⚪ Não iniciado |
+| Definição da state machine (8 estados) | ⚪ Não iniciado |
+| Implementação de conflict detection | ⚪ Não iniciado |
+| Implementação backend (endpoints + eventos) | ⚪ Não iniciado |
+| Implementação frontend (calendário + fluxo) | ⚪ Não iniciado |
+| Integração com M5 — Pagamento | ⚪ Não iniciado |
+| Testes e QA | ⚪ Não iniciado |
+
+---
+
+## 🔗 Dependências com outros módulos
+
+| Módulo | Tipo de dependência |
+| --- | --- |
+| M1 — Autenticação e Cadastro | Identidade do paciente e do profissional para vincular o agendamento |
+| M2 — Perfil do Profissional | Dados do profissional exibidos no fluxo + configurações de agenda e antecedência |
+| M3 — Busca e Categorias | Filtro de disponibilidade consome a agenda em tempo real |
+| M5 — Pagamento | Pagamento é parte obrigatória do fluxo de confirmação |
+| M7 — Notificações | Confirmações, lembretes, cancelamentos e reagendamentos |
+| M8 — Segurança e LGPD | Histórico imutável, retenção de dados e acesso auditado |
+| M9 — Painel Administrativo | Configuração de limites e monitoramento de cancelamentos excessivos |
+
+---
+
+## ❓ Decisões em Aberto
+
+| Decisão | Contexto |
+| --- | --- |
+| Mecanismo de conflict detection | Pessimistic lock no banco, Redis lock distribuído ou outra abordagem? |
+| Confirmação de realização | Ambas as partes confirmam ativamente ou apenas o profissional? |
+| Prazo de confirmação automática | 24h é o valor correto ou deve ser configurável por especialidade? |
+| Integração com Google / Apple Calendar | Para qual versão está prevista? Quais dados sincronizar? |
+| Kafka vs. outros event brokers | Kafka é o escolhido para os eventos de estado? |
+| Cancelamento automático por sistema | Quais condições além de expiração de pagamento disparam `CANCELADO_SISTEMA`? |
+
+> Hub central de Agendamento. Acesse as sub-páginas conforme seu papel.
+
+---
+
+## Acesso Rápido
+
+| Para quem | Sub-página |
+| --- | --- |
+| Product Manager / Designer / QA | 📦 Produto & Negócio — jornadas, estados, regras de cancel, histórico e critérios de aceite |
+| Engenheiro / Tech Lead | ⚙️ Especificação Técnica — schema, state machine, conflict detection, endpoints e Kafka events |
+
+---
+
+## Contexto rápido
+
+O agendamento é a **conversão principal** da plataforma. Envolve conflict detection (double booking), state machine de 8 estados, confirmação bilateral de realização e integração direta com M5 (Pagamento).
+
+## 5.1 Fluxo de agendamento
+
+**Etapas do agendamento**
+
+---
+
+- 1. Cliente está autenticado na plataforma  
+    1. Cliente está autenticado na plataforma  
+
+---
+
+- 2. Cliente acessa o perfil do profissional desejado  
+    1. Cliente acessa o perfil do profissional desejado  
+
+---
+
+- 3. Cliente visualiza o calendário com dias e horários disponíveis  
+    1. Cliente visualiza o calendário com dias e horários disponíveis  
+
+---
+
+- 4. Cliente seleciona data, horário e modalidade (presencial/domiciliar)  
+    1. Cliente seleciona data, horário e modalidade (presencial/domiciliar)  
+
+---
+
+- 5. Cliente revisa dados e confirma o agendamento  
+    1. Cliente revisa dados e confirma o agendamento  
+
+---
+
+- 6. Pagamento é processado (pré-agendamento ou no dia)  
+    1. Pagamento é processado (pré-agendamento ou no dia)  
+
+---
+
+- 7. Ambos recebem notificação de confirmação  
+    1. Ambos recebem notificação de confirmação  
+
+---
+
+- 8. Consulta aparece no calendário de ambos  
+    1. Consulta aparece no calendário de ambos  
+
+---
+
+## 5.2 Calendário e visibilidade
+
+- O profissional cadastra seus horários disponíveis no sistema  
+- O cliente visualiza apenas os slots disponíveis (não ocupados)  
+- O profissional tem acesso ao calendário do cliente para ver os próximos passos pós-consulta  
+- Integração futura com Google Calendar / Apple Calendar (recomendada)  
+
+## 5.3 Limite de agendamentos
+
+Devem ser definidos limites para evitar sobrecarga ou abusos do sistema:
+
+| **Regra** | **Valor sugerido** |
+| --- | --- |
+| Máximo de agendamentos ativos por cliente/mês | Configurável pelo admin (ex: 5 por especialidade) |
+| Antecedência mínima para agendamento | Configurável pelo profissional (ex: 2h) |
+| Antecedência mínima para cancelamento sem multa | Configurável pelo profissional (ex: 24h) |
+| Janela de reagendamento | Até X horas antes da consulta, configurável |
+
+## 5.4 Cancelamentos e reagendamentos
+
+- Cliente pode cancelar ou reagendar com antecedência mínima definida  
+- Cancelamentos tardios podem gerar cobrança de taxa (configurável por profissional)  
+- Profissional também pode cancelar; nesse caso, sem cobrança ao cliente e com notificação imediata  
+- Histórico completo de alterações é armazenado para auditoria  
+
+**O histórico deve conter:**
+
+- **Quem fez a ação** — cliente, profissional ou sistema automático
+- **O que foi feito** — cancelamento, reagendamento ou tentativa não concluída
+- **Data e hora exata** — determina se estava dentro ou fora do prazo
+- **Estado antes e depois** — agendamento original e para o quê foi alterado (data, horário, modalidade)
+- **Motivo informado** — campo opcional para o usuário, mas deve sempre existir no sistema
+- **Resultado financeiro** — se houve reembolso, valor, taxa cobrada e canal de pagamento afetado
