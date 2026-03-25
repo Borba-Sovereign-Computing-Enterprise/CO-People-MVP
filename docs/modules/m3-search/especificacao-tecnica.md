@@ -95,10 +95,11 @@ Pesos (100 pontos):
 10 pts: agenda aberta
 
 5 pts: preço relativo
+```
 
 3. Endpoints REST
 3.1 Busca principal
-
+```
 GET /api/v1/search/professionals
 
 Query params:
@@ -147,36 +148,55 @@ Response 200:
   ],
   "pagination": { "total": 1000, "page": 1, "per_page": 20, "total_pages": 50 }
 }
-
+```
 3.2 Catálogo de especialidades
-
+```
 GET /api/v1/specialties
 Query: ?council_type=CRM&active=true
-
+Response 200: {
+  specialties: [
+    { id, name, slug, council_type, icon_url }
+  ]
+}
+```
 3.3 Admin — gestão de especialidades
+```
+POST /api/v1/admin/specialties
+Body: { name, council_type, slug, icon_url, display_order }
+Response 201: { id, name, slug }
 
-POST   /api/v1/admin/specialties
-PATCH  /api/v1/admin/specialties/:id
+PATCH /api/v1/admin/specialties/:id
+Body: { name?, icon_url?, is_active?, display_order? }
+Response 200: { updated specialty }
+
 DELETE /api/v1/admin/specialties/:id
+Note: Soft deactivate (is_active = false), não deleta
+```
 
 4. Busca Geográfica — PostGIS
+```
 
+-- Busca profissionais dentro de raio com ordenação por distância
 SELECT *,
   POINT(lng, lat) <-> POINT(:user_lng, :user_lat) AS distance_km
 FROM professional_search
-WHERE POINT(lng, lat) <-> POINT(:user_lng, :user_lat) <= :radius_km
+WHERE
+  POINT(lng, lat) <-> POINT(:user_lng, :user_lat) <= :radius_km
   AND :modality = ANY(service_modalities)
 ORDER BY distance_km;
-
+```
 5. Full-Text Search — PostgreSQL
+```
 
+-- Busca por texto (nome, bio, especialidade)
 SELECT *
 FROM professional_search
 WHERE search_vector @@ PLAINTO_TSQUERY('portuguese', :query)
 ORDER BY TS_RANK(search_vector, PLAINTO_TSQUERY('portuguese', :query)) DESC;
+```
 
 6. Query Clojure — Busca Completa
-
+```
 (defn build-search-query
   [{:keys [q specialty-id city lat lng radius-km
            modality price-min price-max rating-min
@@ -208,8 +228,13 @@ ORDER BY TS_RANK(search_vector, PLAINTO_TSQUERY('portuguese', :query)) DESC;
     :always
     (assoc :limit per-page
            :offset (* (dec page) per-page))))
+```
 
 7. Cache de Busca (Redis)
+```
+
+;; Cache de resultados de busca por hash dos parâmetros
+;; TTL: 2 minutos (busca muda pouco em curto prazo)
 
 (def search-cache-ttl 120)
 
@@ -222,10 +247,13 @@ ORDER BY TS_RANK(search_vector, PLAINTO_TSQUERY('portuguese', :query)) DESC;
         (redis/setex redis cache-key search-cache-ttl (json/encode result))
         result))))
 
+;; Invalidação: quando a MV é refreshada, flush do namespace search:*
 (defn invalidate-search-cache! [redis]
   (redis/del-pattern redis "search:*"))
+```
 
 8. Observabilidade
+```
 Métrica: search.query.duration (p50/p95/p99)
 
 Métrica: search.results.count — média de resultados por busca
