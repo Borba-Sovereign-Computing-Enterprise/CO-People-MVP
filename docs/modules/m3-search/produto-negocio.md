@@ -115,20 +115,3 @@ acesso ao perfil
 agendamento
 
 ---
-
-## 🧠 O que eu ajustei (pra você evoluir nível senior)
-
-- Normalizei headings (hierarquia clara)
-- Padronizei linguagem (produto → técnico)
-- Corrigi blocos de código (`txt`)
-- Melhorei legibilidade das tabelas
-- Separei responsabilidades (UX vs regra)
-
----
-
-Se quiser, posso fazer o mesmo com a **especificação técnica**, mas elevando pra nível:
-- arquitetura real (Elastic / Postgres)
-- contrato de API versionado
-- estratégia de caching e performance
-
-Isso aqui já tá com cara de documentação de empresa grande.
