@@ -144,4 +144,4 @@ Paciente paga: R$ 200,00
 | | |
 |--|--|
 | ← Hub | [README — M5 Pagamento](./README.md) |
-| → Técnico | [Especificação Técnica — Pagamento](./02-M5-Especificacao-Tecnica-Pagamento.md) |
+| → Técnico | [Especificação Técnica — Pagamento](./M5-Especificacao-Tecnica-Pagamento.md) |
