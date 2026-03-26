@@ -206,6 +206,6 @@ Notificações excessivas ou mal direcionadas degradam a experiência e levam ao
 
 [📦 Produto & Negócio — Notificações](./M7-Produto-Negocio-Notificacoes.md)
 
-[⚙️ Especificação Técnica — Notificações](./M7-Produto-Negocio-Notificacoes.md)
+[⚙️ Especificação Técnica — Notificações](./M7-Especificacao-Tecnica-Notificacoes.md)
 
 
