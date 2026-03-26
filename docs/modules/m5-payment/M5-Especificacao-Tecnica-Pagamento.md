@@ -298,4 +298,4 @@ POST /api/v1/admin/transfers/:id/release
 | | |
 |--|--|
 | ← Hub | [README — M5 Pagamento](./README.md) |
-| ← Produto | [Produto & Negócio — Pagamento](./01-M5-Produto-Negocio-Pagamento.md) |
+| ← Produto | [Produto & Negócio — Pagamento](./M5-Produto-Negocio-Pagamento.md) |
