@@ -204,8 +204,8 @@ Notificações excessivas ou mal direcionadas degradam a experiência e levam ao
 | Janela de silêncio configurável? | Usuário pode personalizar o horário de não perturbe? |
 | Agrupamento de notificações | Agrupar múltiplos eventos em uma única notificação ou enviar individualmente? |
 
-[📦 Produto & Negócio — Notificações](https://www.notion.so/Produto-Neg-cio-Notifica-es-3278f5aea1ae8179921ad7d1f7a68a19?pvs=21)
+[📦 Produto & Negócio — Notificações](./M7-Produto-Negocio-Notificacoes.md)
 
-[⚙️ Especificação Técnica — Notificações](https://www.notion.so/Especifica-o-T-cnica-Notifica-es-3278f5aea1ae81ea96d2e0dfcc264f28?pvs=21)
+[⚙️ Especificação Técnica — Notificações](./M7-Produto-Negocio-Notificacoes.md)
 
 
