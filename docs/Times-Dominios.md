@@ -38,22 +38,6 @@
 | 🟢 Concluído | Entregue e validado |
 | 🔴 Bloqueado | Impedimento ativo |
 
-[👤 Identidade & Auth](https://www.notion.so/Identidade-Auth-3278f5aea1ae81cfafedffc3ed172e49?pvs=21)
-
-[🩺 Profissionais](https://www.notion.so/Profissionais-3278f5aea1ae81be8055f2a28e2db8b1?pvs=21)
-
-[🔍 Descoberta & Busca](https://www.notion.so/Descoberta-Busca-3278f5aea1ae81c295c6c33375c135a3?pvs=21)
-
-[📅 Agendamento](https://www.notion.so/Agendamento-3278f5aea1ae813583d8c9bf6eabfee4?pvs=21)
-
-[💳 Pagamentos](https://www.notion.so/Pagamentos-3278f5aea1ae818a92c5d197c79c15e9?pvs=21)
-
-[💬 Comunicação & Notificações](https://www.notion.so/Comunica-o-Notifica-es-3278f5aea1ae81bbaf3accecaac5d00b?pvs=21)
-
-[🔒 Plataforma & Operações](https://www.notion.so/Plataforma-Opera-es-3278f5aea1ae81bfaa3edf325fe1bd2a?pvs=21)
-
-[📐 Padrões de Engenharia](https://www.notion.so/Padr-es-de-Engenharia-3278f5aea1ae81bd8b21d0905a515ede?pvs=21)
-
 
 ## Ilhas do Projeto
 
@@ -78,5 +62,21 @@
 | 🟡 Em Revisão | PR aberto / QA |
 | 🟢 Concluído | Entregue e validado |
 | 🔴 Bloqueado | Impedimento ativo |
+
+[👤 Identidade & Auth](https://www.notion.so/Identidade-Auth-3278f5aea1ae81cfafedffc3ed172e49?pvs=21)
+
+[🩺 Profissionais](https://www.notion.so/Profissionais-3278f5aea1ae81be8055f2a28e2db8b1?pvs=21)
+
+[🔍 Descoberta & Busca](https://www.notion.so/Descoberta-Busca-3278f5aea1ae81c295c6c33375c135a3?pvs=21)
+
+[📅 Agendamento](https://www.notion.so/Agendamento-3278f5aea1ae813583d8c9bf6eabfee4?pvs=21)
+
+[💳 Pagamentos](https://www.notion.so/Pagamentos-3278f5aea1ae818a92c5d197c79c15e9?pvs=21)
+
+[💬 Comunicação & Notificações](https://www.notion.so/Comunica-o-Notifica-es-3278f5aea1ae81bbaf3accecaac5d00b?pvs=21)
+
+[🔒 Plataforma & Operações](https://www.notion.so/Plataforma-Opera-es-3278f5aea1ae81bfaa3edf325fe1bd2a?pvs=21)
+
+[📐 Padrões de Engenharia](https://www.notion.so/Padr-es-de-Engenharia-3278f5aea1ae81bd8b21d0905a515ede?pvs=21)
 
 
