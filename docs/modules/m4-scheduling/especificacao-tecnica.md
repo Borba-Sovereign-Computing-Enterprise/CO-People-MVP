@@ -110,7 +110,7 @@ PENDING (pagamento pendente)
                                              nenhum confirmar após 48h)
                                              └─ sistema ──────────────► NO_SHOW
 
-### 3. Conflict Detection — Double Booking
+## 3. Conflict Detection — Double Booking
 
 ;; Verifica se o slot está disponível antes de criar appointment
 ;; Usa SELECT FOR UPDATE para garantir atomicidade
@@ -136,9 +136,9 @@ PENDING (pagamento pendente)
 ;; O UNIQUE INDEX garante que apenas um INSERT seja aceito
 ;; O segundo receberá uma constraint violation — retorna 409 Conflict
 
-### 4. Endpoints REST
+## 4. Endpoints REST
 
-## 4.1 Horários disponíveis
+### 4.1 Horários disponíveis
 
 GET /api/v1/professionals/:id/availability
 Query: ?date=2025-06-15&modality=presential
@@ -149,7 +149,7 @@ Response 200: {
   ]
 }
 
-## 4.2 Agendamento
+### 4.2 Agendamento
 
 POST /api/v1/appointments
 Auth: paciente autenticado
@@ -169,7 +169,7 @@ Response 200: { appointment details + history }
 GET /api/v1/me/appointments?status=CONFIRMED&page=1
 Response 200: { appointments[], pagination }
 
-## 4.3 Confirmação bilateral
+### 4.3 Confirmação bilateral
 
 POST /api/v1/appointments/:id/confirm-completion
 Auth: paciente ou profissional autenticado
@@ -179,7 +179,7 @@ Response 200: {
   status  // COMPLETED se ambos confirmaram
 }
 
-## 4.4 Cancelamento
+### 4.4 Cancelamento
 
 DELETE /api/v1/appointments/:id
 Auth: paciente ou profissional
@@ -191,7 +191,7 @@ Response 200: {
   fee_charged
 }
 
-## 4.5 Gestão de agenda (profissional)
+### 4.5 Gestão de agenda (profissional)
 
 GET  /api/v1/me/availability
 POST /api/v1/me/availability           // cria slot recorrente
@@ -200,9 +200,8 @@ DELETE /api/v1/me/availability/:id
 GET  /api/v1/me/blocked-periods
 POST /api/v1/me/blocked-periods        // bloqueia período
 
-### 5. Kafka Events
-
 ## 5. Kafka Events
+
 
 | Evento | Tópico | Payload resumido | Consumidores |
 | --- | --- | --- | --- |
@@ -234,7 +233,7 @@ POST /api/v1/me/blocked-periods        // bloqueia período
                  [:= :professional_confirmed false]]]})))
 ```
 
-7. Observabilidade
+## 7. Observabilidade
 Métrica: appointment.created_per_hour — volume de agendamentos
 
 Métrica: appointment.cancellation_rate por tipo (patient/professional/late)
