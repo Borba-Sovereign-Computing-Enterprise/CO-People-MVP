@@ -1,4 +1,4 @@
-# Produto & Negócio — Notificações
+# 🔔 Produto & Negócio — Notificações
 
 > **Audiência:** Product Manager, Designer, Stakeholders
 > 
