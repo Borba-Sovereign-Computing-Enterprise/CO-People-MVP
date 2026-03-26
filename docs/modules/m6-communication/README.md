@@ -283,3 +283,6 @@ Ao iniciar uma conversa, o sistema apresenta um menu de opções estruturado (UR
 - Notificação push ao receber nova mensagem  
 - Restrição de tamanho de arquivo (ex: máx. 10MB por envio)  
 
+> 📦 [Produto & Negócio — Comunicação](./M6-Produto-Negocio-Comunicacao.md)
+
+> ⚙️ [Especificação Técnica — Comunicação](./M6-Especificacao-Tecnica-Comunicacao.md)
