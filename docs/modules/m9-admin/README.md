@@ -328,4 +328,4 @@ O painel administrativo é o centro de controle da plataforma, acessível apenas
 
 [📦 Produto & Negócio — Painel Administrativo](M9-Produto-Negocio-PainelAdm.md)
 
-[⚙️ Especificação Técnica — Painel Administrativo](M9-Produto-Negocio-PainelAdm.md)
+[⚙️ Especificação Técnica — Painel Administrativo](M9-Especificacao-Tecnica-PainelAdm.md)
