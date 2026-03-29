@@ -23,4 +23,4 @@ Tudo sobre o profissional de saúde: perfil, especialidades, documentos, aprova�
 
 [☁️ Infra — Profissionais](./Infra-Profissionais.md)
 
-[📅 Roadmap — Profissionais](./Roadmap-Profissionais)
+[📅 Roadmap — Profissionais](./Roadmap-Profissionais.md)
