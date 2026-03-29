@@ -49,7 +49,7 @@
 
 [📅 Agendamento](./Agendamento.md)
 
-[💳 Pagamentos](./Pagamentos)
+[💳 Pagamentos](./Pagamentos.md)
 
 [💬 Comunicação & Notificações](./Comunicacao-e-Notificacoes.md)
 
