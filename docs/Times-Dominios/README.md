@@ -39,29 +39,7 @@
 | 🔴 Bloqueado | Impedimento ativo |
 
 
-## Ilhas do Projeto
 
-| Ilha | Domínio | Módulos cobertos |
-| --- | --- | --- |
-| 👤 Identidade & Auth | Cadastro, autenticação, consentimento | M1, M8 (parcial) |
-| 🩺 Profissionais | Perfil, aprovação, especialidades, avaliações | M2, M9 (parcial) |
-| 🔍 Descoberta & Busca | Busca, catálogo, categorias | M3 |
-| 📅 Agendamento | Slots, conflitos, agenda, histórico | M4 |
-| 💳 Pagamentos | Checkout, split, repasse, reembolso | M5 |
-| 💬 Comunicação & Notificações | Chat, push, email, SMS | M6, M7 |
-| 🔒 Plataforma & Operações | Admin, LGPD, auditoria, segurança | M8, M9 |
-
----
-
-## Legenda do Kanban
-
-| Status | Significado |
-| --- | --- |
-| 🟣 Backlog | Identificado, não iniciado |
-| 🔵 Em Progresso | Trabalho ativo |
-| 🟡 Em Revisão | PR aberto / QA |
-| 🟢 Concluído | Entregue e validado |
-| 🔴 Bloqueado | Impedimento ativo |
 
 [👤 Identidade & Auth](./Identidade-Auth.md)
 
