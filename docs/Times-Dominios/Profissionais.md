@@ -17,12 +17,10 @@ Tudo sobre o profissional de saúde: perfil, especialidades, documentos, aprova�
 | 📅 Roadmap & Kanban | Entregas, tarefas, responsáveis e datas |
 
 
-# MANUTENÇÃO SUBPASTAS
+[🔧 Backend — Profissionais](./Backend-Profissionais.md)
 
-[🔧 Backend — Profissionais](https://www.notion.so/Backend-Profissionais-3278f5aea1ae81378a7cf0546dd6abb2?pvs=21)
+[🎨 Frontend — Profissionais](./Frontend-Profissionais.md)
 
-[🎨 Frontend — Profissionais](https://www.notion.so/Frontend-Profissionais-3278f5aea1ae81d78231ecb0cabbcfdf?pvs=21)
+[☁️ Infra — Profissionais](./Infra-Profissionais.md)
 
-[☁️ Infra — Profissionais](https://www.notion.so/Infra-Profissionais-3278f5aea1ae8174bff6f10729a92b83?pvs=21)
-
-[📅 Roadmap — Profissionais](https://www.notion.so/5a64505dd8c141e8a8d1d10916741e3a?pvs=21)
+[📅 Roadmap — Profissionais](./Roadmap-Profissionais)
