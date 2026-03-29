@@ -63,7 +63,7 @@
 | 🟢 Concluído | Entregue e validado |
 | 🔴 Bloqueado | Impedimento ativo |
 
-[👤 Identidade & Auth](https://www.notion.so/Identidade-Auth-3278f5aea1ae81cfafedffc3ed172e49?pvs=21)
+[👤 Identidade & Auth](/Identidade-Auth.md)
 
 [🩺 Profissionais](https://www.notion.so/Profissionais-3278f5aea1ae81be8055f2a28e2db8b1?pvs=21)
 
