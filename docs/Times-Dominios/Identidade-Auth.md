@@ -21,4 +21,7 @@ Toda a responsabilidade de quem acessa a plataforma: cadastro, login, sessões, 
 # Aqui subpastas serão ajustadas / MANUTENÇÃO
 
 [🔧 Backend — Identidade & Auth](./Backend-Identidade-e-Auth.md)
+[🎨 Frontend — Identidade & Auth](./Frontend-Identidade-e-Auth.md)
+[☁️ Infra — Identidade & Auth](./Infra-Identidade-e-Auth.md)
+[📅 Roadmap — Identidade & Auth](./Roadmap-Identidade-e-Auth.md)
 
