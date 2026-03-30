@@ -126,6 +126,7 @@ Antes de ver as tecnologias, é fundamental entender **como** trabalhamos — es
 ### 3.5 Schema & Validação — Malli vs clojure.spec.alpha
 
 > ⚠️ **Decisão pendente para o time.** Ambas as bibliotecas são adicionadas ao projeto; a escolha definitiva ocorre após spike técnico na primeira sprint.
+
 | Critério | **Malli** *(atual primário)* | **clojure.spec.alpha** |
 | --- | --- | --- |
 | **Sintaxe** | Schemas como vetores/mapas EDN (`[:map [:name :string]]`) — totalmente data-driven | Macros (`s/def`, `s/keys`) — mais verboso, menos composável como dado |
@@ -200,10 +201,10 @@ Antes de ver as tecnologias, é fundamental entender **como** trabalhamos — es
 - **Razão:** APIs de conselhos profissionais não são estáveis; automatação em v2
 - **Consequência:** Gargalo operacional se volume crescer — priorizar automação antes de escalar onboarding
 
-- 5. Entidades Principais do Modelo de Domínio
 
-  ```
-users
+ ## 5. Entidades Principais do Modelo de Domínio
+ ```
+ users
   id, type (patient|professional|admin),
   email, phone, password_hash,
   status (ACTIVE|INACTIVE|PENDING|SUSPENDED)
@@ -233,8 +234,7 @@ reviews
   id, appointment_id, patient_id, professional_id,
   rating (1-5), comment, status (PENDING_MODERATION|PUBLISHED|REJECTED)
 ```
-```
-6. Fluxograma Técnico — Requisição End-to-End
+## 6. Fluxograma Técnico — Requisição End-to-End
 ```
 Cliente → [TLS] → Pedestal Router
                           ↓
@@ -251,9 +251,10 @@ Cliente → [TLS] → Pedestal Router
               [Repository Layer: ns/db]
                           ↓
                      PostgreSQL
-
+                     ```
 ```
 🔗 [Inserir link do LucidChart — Diagrama de Arquitetura Completo]
+
 ## 7. Observabilidade — Requisitos Mínimos do MVP
 
 - Tracing distribuído com OpenTelemetry em todas as requisições HTTP
@@ -261,4 +262,3 @@ Cliente → [TLS] → Pedestal Router
 - Alertas críticos: taxa de erro > 1%, latency p99 > 2s, falha de pagamento
 - Sentry para captura de exceções com contexto de usuário (anonimizado conforme LGPD)
 - Audit log imutável para todas as ações sobre dados sensíveis de saúde
-
