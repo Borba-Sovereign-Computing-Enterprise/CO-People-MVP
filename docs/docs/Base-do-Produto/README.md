@@ -1,16 +1,12 @@
-# 📋 Visão Geral do Produto
+# 🏗️ Base do Produto
 
-> Hub central da Visão Geral. Acesse as sub-páginas abaixo conforme seu papel.
-> 
+Documentação fundacional — leia antes de qualquer módulo específico.
 
-## Acesso Rápido
+---
 
-| Para quem | Sub-página |
-| --- | --- |
-| Product Manager / Designer / Stakeholder | 📦 Produto & Negócio |
-| Engenheiro / Tech Lead / Arquiteto | ⚙️ Especificação Técnica |
-
-[📦 Produto & Negócio — Visão Geral](./Produto-e-Negocio-Visao-Geral.md)
-
-[⚙️ Especificação Técnica — Visão Geral](./Especificacao-tecnica-Visao-Geral.md)
+- 📋 [Visão Geral do Produto](visao-geral-do-produto.md)
+- 📌 [Regras de Negócio Transversais](regras-de-negocio-transversais.md)
+- 🔧 [Considerações Técnicas](consideracoes-tecnicas.md)
+- 🎨 [Design System – Plataforma de Saúde](design-system.md)
+- 📄 [Fluxograma](fluxograma.md)
 
