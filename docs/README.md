@@ -62,4 +62,4 @@ Se você acabou de entrar no projeto, siga esta ordem:
 ---
 
 ## 🏗️ Base do Produto
-[Documentação fundacional](docs/Base-do-Produto/README.md)
+[Visão Geral do Projeto](docs/Base-do-Produto/README.md)
