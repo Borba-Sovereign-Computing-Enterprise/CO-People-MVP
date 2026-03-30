@@ -97,17 +97,19 @@ Equipe interna responsável por aprovar novos profissionais, monitorar a saúde 
 | Taxa de churn de profissionais | ≤ 20% no primeiro mês |
 
 8. Mapa de Módulos do MVP
-┌─────────────────────────────────────────────────────────┐
-│                   PLATAFORMA DE SAÚDE                   │
-├──────────────┬──────────────────┬───────────────────────┤
-│  M1 Autent.  │  M2 Perfil Prof. │  M3 Busca & Categ.    │
-├──────────────┴──────────────────┴───────────────────────┤
-│         M4 Agendamento          │   M5 Pagamento         │
-├──────────────────────────────────────────────────────────┤
-│  M6 Chat/Comunicação  │  M7 Notificações                │
-├──────────────────────────────────────────────────────────┤
-│  M8 Segurança & LGPD  │  M9 Painel Admin                │
-└──────────────────────────────────────────────────────────┘
+# Plataforma de Saúde — Roadmap de Módulos
+
+| Módulo | Descrição | Sprint |
+|--------|-----------|--------|
+| M1 | Autenticação | 1–2 |
+| M2 | Perfil Profissional | 1–2 |
+| M3 | Busca & Categorias | 1–2 |
+| M4 | Agendamento | 3–6 |
+| M5 | Pagamento | 3–4 |
+| M6 | Chat / Comunicação | 5–6 |
+| M7 | Notificações | 5–6 |
+| M8 | Segurança & LGPD | 7–8 |
+| M9 | Painel Admin | 7–8 |
 
 ## 9. Fluxograma de Jornadas (LucidChart)
 
